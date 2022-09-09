@@ -3,19 +3,22 @@ import Head from 'next/head';
 
 const Home: NextPage = function () {
   return (
-    <div>
+    <div className='flex justify-center items-center h-full'>
       <Head>
         <title>Coctails Recepies</title>
         <meta name='description' content='Coctail recepies' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div>
-        <form action='/search'>
-          <label htmlFor='recipe-search'>Search for recipe</label>
-          <input type='text' id='recipe-search' name='query' />
-          <button type='submit'>Search</button>
-        </form>
-      </div>
+      <form action='/search' className='flex flex-col'>
+        <input
+          type='text'
+          autoFocus
+          id='recipe-search'
+          name='query'
+          className='border border-yellow-400 rounded p-2'
+        />
+        <button type='submit'>Search</button>
+      </form>
     </div>
   );
 };

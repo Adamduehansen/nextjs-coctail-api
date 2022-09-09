@@ -16,7 +16,7 @@ const Home: NextPage<PageProps> = function ({ drink }) {
         <meta name='description' content='Coctail recepies' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h2>{drink.strDrink}</h2>
+      <h2 className='text-2xl'>{drink.strDrink}</h2>
       <Image
         src={drink.strDrinkThumb}
         alt={drink.strDrink}
@@ -37,10 +37,6 @@ const Home: NextPage<PageProps> = function ({ drink }) {
             };
           })}
       />
-      <hr />
-      <Link href='/'>
-        <a>Back to search</a>
-      </Link>
     </div>
   );
 };
@@ -66,6 +62,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async function (
     props: {
       drink: drink,
     },
+    revalidate: 60,
   };
 };
 

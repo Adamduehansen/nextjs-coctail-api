@@ -14,9 +14,19 @@ function IngredientsList({ ingredients }: Props) {
 
   return (
     <div>
-      <div>
-        <button onClick={() => setAmount((current) => current + 1)}>+</button>
-        <button onClick={() => setAmount((current) => current - 1)}>-</button>
+      <div className='inline-block border-2 border-blue-600  bg-blue-400 text-white rounded-lg'>
+        <button
+          className='px-4 py-2 border-r border-blue-600'
+          onClick={() => setAmount((current) => current + 1)}
+        >
+          +
+        </button>
+        <button
+          className='px-4 py-2 border-l border-blue-600'
+          onClick={() => setAmount((current) => current - 1)}
+        >
+          -
+        </button>
       </div>
       <ul>
         {ingredients.map((ingredient, index) => {

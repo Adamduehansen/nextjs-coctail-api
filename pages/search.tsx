@@ -15,23 +15,20 @@ const Query: NextPage<PageProps> = function ({ query, results }) {
         <meta name='description' content='Coctail recepies' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>Query</h1>
+      <h2 className='text-2xl'>Search Results</h2>
       {(results.length > 0 && (
         <ul>
           {results.map((result, index) => {
             return (
               <li key={`${index}_${result.id}`}>
                 <Link href={`/cocktails/${result.id}`}>
-                  <a>{result.name}</a>
+                  <a className='text-green-600'>{result.name}</a>
                 </Link>
               </li>
             );
           })}
         </ul>
       )) || <div>No reults</div>}
-      <Link href='/'>
-        <a>Back to search</a>
-      </Link>
     </div>
   );
 };
