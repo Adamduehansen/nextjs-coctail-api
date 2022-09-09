@@ -7,7 +7,7 @@ function Layout({ children }: PropsWithChildren) {
       <header>
         <Link href='/'>
           <a>
-            <h1 className='text-4xl'>The Coctail DB</h1>
+            <h1 className='text-4xl'>The Cocktail DB</h1>
           </a>
         </Link>
       </header>
